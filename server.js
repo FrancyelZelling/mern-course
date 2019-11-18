@@ -12,6 +12,10 @@ const connectDB = require("./config/db");
 // Connect to database
 connectDB();
 
+// Init middleware
+// I THINK this is used to parse information to our database. We created in models objects in js, so this is needed to parse to json
+app.use(express.json({ extended: false }));
+
 // Simple route to test if the API is running fine
 app.get("/", (req, res) => res.send("API Running"));
 
