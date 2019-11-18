@@ -6,6 +6,12 @@ const express = require("express");
 // Define express onto a var
 const app = express();
 
+// Importing the connect configuration, this way this server.js looks more clean
+const connectDB = require("./config/db");
+
+// Connect to database
+connectDB();
+
 // Simple route to test if the API is running fine
 app.get("/", (req, res) => res.send("API Running"));
 
