@@ -17,6 +17,7 @@ app.get("/", (req, res) => res.send("API Running"));
 
 // Define routes
 // This is what you use for those separeted files with each route
+// First parameter is the route that we want to hit, then the second parameter is the file created for that especific route
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/profile", require("./routes/api/profile"));
