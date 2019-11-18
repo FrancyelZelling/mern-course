@@ -15,6 +15,13 @@ connectDB();
 // Simple route to test if the API is running fine
 app.get("/", (req, res) => res.send("API Running"));
 
+// Define routes
+// This is what you use for those separeted files with each route
+app.use("/api/users", require("./routes/api/users"));
+app.use("/api/auth", require("./routes/api/auth"));
+app.use("/api/profile", require("./routes/api/profile"));
+app.use("/api/posts", require("./routes/api/posts"));
+
 // Here is the port, on production you want to have your port in a variable, not in your code like that
 const PORT = process.env.PORT || 5000;
 
