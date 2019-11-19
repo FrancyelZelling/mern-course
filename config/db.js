@@ -14,7 +14,8 @@ const connectDB = async () => {
     // This connects with the atlas DB
     await mongoose.connect(db, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      useCreateIndex: true
     });
 
     console.log("MongoDB Connect...");
